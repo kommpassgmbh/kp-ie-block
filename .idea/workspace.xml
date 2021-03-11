@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a485c49d-04e1-432a-9ba3-5abbfb864d52" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kp-ie-block.php" beforeDir="false" afterPath="$PROJECT_DIR$/kp-ie-block.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/updater.php" beforeDir="false" afterPath="$PROJECT_DIR$/updater.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +34,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1615456204493</updated>
-      <workItem from="1615456206081" duration="558000" />
+      <workItem from="1615456206081" duration="740000" />
     </task>
     <servers />
   </component>
