@@ -1,0 +1,58 @@
+#ie-overlay{
+  display: none;
+  z-index: 10000000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: transparentize(black, .1);
+  .popup{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    text-align: center;
+    padding: 1rem;
+    .icon{
+      margin-bottom: 1rem;
+      svg{
+        height: 3rem;
+        width: 3rem;
+      }
+      svg, path{
+        fill: #8a0000;
+      }
+    }
+    .title{
+      margin-bottom: 1rem;
+      color: #8a0000;
+      font-size: 2.5rem;
+    }
+    .text{
+      color: black;
+      font-size: 1.5rem;
+    }
+    .links{
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+      a{
+        display: block;
+        margin-right: 1rem;
+        img{
+          height: 3rem;
+        }
+      }
+    }
+  }
+}
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  #ie-overlay{
+    display: block;
+  }
+  body{
+    overflow: hidden !important;
+  }
+}
