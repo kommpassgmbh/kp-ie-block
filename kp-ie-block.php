@@ -4,9 +4,21 @@ Plugin Name: Internet Explorer Popup
 Plugin URI: https://kommpass.ch
 description: >-
 Internet Explorer Popup
-Version: 1
+Version: 1.0.0
 Author: Lena Hinnen
 */
+
+if (!class_exists('KommpassUpdater')) {
+    include_once(plugin_dir_path(__FILE__) . 'updater.php');
+}
+
+$updater = new KommpassUpdater( __FILE__ ); // instantiate our class
+$updater->set_username( 'kommpassgmbh' ); // set username
+$updater->set_repository( 'kp-ie-block' ); // set repo
+
+$updater->initialize();
+
+
 add_action('wp_enqueue_scripts', 'kpieb_enqueue');
 function kpieb_enqueue() {
     wp_enqueue_style('plugin-style', plugins_url('plugin-style.css', __FILE__));
@@ -47,5 +59,21 @@ function kpieb_add_to_footer(){
     echo $html;
 }
 
+function get_repository_info() {
+  if ( is_null( $this->github_response ) ) { // Do we have a response?
+    $request_uri = sprintf( 'https://api.github.com/repos/%s/%s/releases', $this->username, $this->repository ); // Build URI
+    if( $this->authorize_token ) { // Is there an access token?
+        $request_uri = add_query_arg( 'access_token', $this->authorize_token, $request_uri ); // Append it
+    }
+    $response = json_decode( wp_remote_retrieve_body( wp_remote_get( $request_uri ) ), true ); // Get JSON and parse it
+    if( is_array( $response ) ) { // If it is an array
+        $response = current( $response ); // Get the first item
+    }
+    if( $this->authorize_token ) { // Is there an access token?
+        $response['zipball_url'] = add_query_arg( 'access_token', $this->authorize_token, $response['zipball_url'] ); // Update our zip url with token
+    }
+    $this->github_response = $response; // Set it to our property
+  }
+}
 ?>
 
