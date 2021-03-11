@@ -4,7 +4,7 @@ Plugin Name: Internet Explorer Popup
 Plugin URI: https://kommpass.ch
 description: >-
 Internet Explorer Popup
-Version: 1.1.1
+Version: 1.1.2
 Author: Lena Hinnen
 */
 
