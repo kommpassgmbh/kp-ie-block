@@ -75,5 +75,3 @@ function get_repository_info() {
     $this->github_response = $response; // Set it to our property
   }
 }
-?>
-
